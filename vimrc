@@ -1,6 +1,8 @@
 set nocompatible  " We don't want vi compatibility.
 filetype on       " Automatically detect file types.
 
+filetype plugin on " This is needed for match plugin to work
+
 set cursorline " Linea de cursor
 set number     " Show line numbers
 set hlsearch   " Highlight search matches
@@ -25,3 +27,4 @@ set sts=2
 set sw=2
 
 hi Search cterm=none ctermbg=4 ctermfg=15 " Blue color for searches
+

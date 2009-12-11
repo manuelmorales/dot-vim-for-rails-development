@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/manuel/scrum/scrum_on_rails'
 let g:netrw_dirhist_2='/home/manuel/scrum/site/_includes'
 let g:netrw_dirhist_3='/home/manuel/foo/config'
 let g:netrw_dirhist_4='/home/manuel/scrum/scrum_on_rails'
 let g:netrw_dirhist_5='/home/manuel/scrum/teamtrick'
+let g:netrw_dirhist_6='/tmp'

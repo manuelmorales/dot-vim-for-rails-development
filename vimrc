@@ -3,9 +3,10 @@ filetype on       " Automatically detect file types.
 
 filetype plugin on " This is needed for match plugin to work
 
-set cursorline " Linea de cursor
+" set cursorline " Linea de cursor
 set number     " Show line numbers
 set hlsearch   " Highlight search matches
+set nowrap
 
 
 if has("autocmd")
@@ -28,3 +29,7 @@ set sw=2
 
 hi Search cterm=none ctermbg=4 ctermfg=15 " Blue color for searches
 
+command -nargs=+ -complete=file Screen !screen -X at 2 stuff "<args>"
+
+au FileType eruby setl tabstop=2 noexpandtab
+" let loaded_matchparen = 1

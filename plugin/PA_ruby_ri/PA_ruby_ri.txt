@@ -1,0 +1,74 @@
+*PA_ruby_ri.txt*           RUBY `ri` plugin
+
+RUBY `ri` plugin                                                    *PA_ruby_ri*
+                                Version 0.0.1
+
+Plugin for getting `ri` documentation while you working with your ruby-like files
+|:PA_ruby_ri|.
+
+|PA_ruby_ri-usage|          Usage
+|PA_ruby_ri-installation|   Installation
+|PA_ruby_ri-customization|  Customization
+|PA_ruby_ri-changelog|      Change Log
+|PA_ruby_ri-todo|           Todo
+|PA_ruby_ri-credits|        Credits
+
+For Vim version 7.0 and above.
+This plugin is only available if 'compatible' is not set and your operating
+system has installed ruby `ri` program.
+
+{Vi does not have any of this}
+
+==============================================================================
+INSTALLATION                                         *PA_ruby_ri-installation*
+
+To install:
+  - Download the PA_ruby_ri.zip.
+  - Extract the zip archive into your runtime directory.
+    The archive contains plugin/PA_ruby_ri.vim, and doc/PA_ruby_ri.txt.
+  - Start Vim or goto an existing instance of Vim.
+  - Execute the following command:
+>
+      :helptag <your runtime directory/doc
+<
+    This will generate all the help tags for any file located in the doc
+    directory.
+
+==============================================================================
+USAGE                                                       *PA_ruby_ri-usage*
+
+ So, you are working with any ruby-like document(.rb, .rhtml, .rjs, etc) and 
+need get to know some information regarding any ruby entity.
+ In normal mode, put cursor on the word and press ,ri buttons. The ruby ri
+documentation will appear in command screen.
+ Or, in visual mode, select needed word and press ,ri buttons. The ruby ri
+documentation will appear in command screen.
+ That's all.
+
+===============================================================================
+CUSTOMIZATION                                        *PA_ruby_ri-customization*
+
+You can change mapping from ,ri to any you like:
+
+nnoremap <silent> <unique> ANY_YOU_LIKE_MAPPING <Esc>:call<Space>PA_ri(expand('<cword>'))<CR>|              " it gets `ri` for undercursor word in NORMAL mode
+vnoremap <silent> <unique> ANY_YOU_LIKE_MAPPING Y<Esc>:call<Space>PA_ri(substitute(@0, '\n', '', 'g'))<CR>| " it gets `ri` for selected words in VISUAL mode
+
+
+===============================================================================
+CHANGE LOG                                               *PA_ruby_ri-changelog*
+
+0.0.1  - Initial release;
+
+===============================================================================
+TODO                                                          *PA_ruby_ri-todo*
+
+Simplicity is good. If you have any good ideas, please share them :)
+
+===============================================================================
+CREDITS                                                    *PA_ruby_ri-credits*
+
+Author: Pukalskyy Andrij <andrijpu@gmail.com>
+
+===============================================================================
+vim:tw=78:noet:wrap:ts=8:ft=help:norl:
+

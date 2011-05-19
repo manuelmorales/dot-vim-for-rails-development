@@ -24,7 +24,10 @@ if has("autocmd")
   filetype indent on " Autoindentacion
 endif
 
+" two spaces for erb indentation
 au FileType eruby setl tabstop=2 noexpandtab
+
+" Allow sending commands to screen window number 2 by typing :Screen ls
 command -nargs=+ -complete=file Screen !screen -X at 2 stuff "<args>"
 
 " set ignorecase    " ignore case when searching
@@ -47,4 +50,8 @@ nnoremap k gk
 " use w!! to write root files
 cmap w!! w !sudo tee % >/dev/null
 
+" making other Rails formats to behave like html
+" autocmd BufNewFile,BufRead *.addin.erb set filetype=eruby
+autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype = 'html'
+autocmd BufNewFile,BufRead *.addin.erb let b:eruby_subtype = 'html'
 

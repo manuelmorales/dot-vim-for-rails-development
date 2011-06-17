@@ -55,3 +55,4 @@ cmap w!! w !sudo tee % >/dev/null
 autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype = 'html'
 autocmd BufNewFile,BufRead *.addin.erb let b:eruby_subtype = 'html'
 
+autocmd User Rails Rnavcommand cache app/cache -glob=**/* -suffix=_cache.rb -default=./lib/cache_observer.rb

@@ -25,10 +25,13 @@ if has("autocmd")
 endif
 
 " two spaces for erb indentation
-au FileType eruby setl tabstop=2 noexpandtab
+au FileType eruby setl tabstop=2 expandtab
+au FileType ruby setl tabstop=2 expandtab
 
 " Allow sending commands to screen window number 2 by typing :Screen ls
 command -nargs=+ -complete=file Screen !screen -X at 2 stuff "<args>"
+command -complete=file Spfile exec "!screen -X at 2 stuff \"bundle exec spec %\""
+command -complete=file Spline exec "!screen -X at 2 stuff \"bundle exec spec %:" . line(".") . "\""
 
 " set ignorecase    " ignore case when searching
 " set smartcase     " ignore case if search pattern is all lowercase,
@@ -55,4 +58,7 @@ cmap w!! w !sudo tee % >/dev/null
 autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype = 'html'
 autocmd BufNewFile,BufRead *.addin.erb let b:eruby_subtype = 'html'
 
-autocmd User Rails Rnavcommand cache app/cache -glob=**/* -suffix=_cache.rb -default=./lib/cache_observer.rb
+autocmd User Rails Rnavcommand cache app/cache -glob=**/* -suffix=_cache.rb
+autocmd User Rails Rnavcommand api app/apis -glob=**/* -suffix=_api.rb -default=application
+
+hi Folded ctermbg=NONE
